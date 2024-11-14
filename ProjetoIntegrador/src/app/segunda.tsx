@@ -26,7 +26,7 @@ export default function Segunda() {
         <TextInput style={styles.containerMedioTexto}
         />
 
-        <Link href='/terceira'>Clicar aqui até fazer o botão kkkkkkkkk</Link>
+        <Link href='/terceira2'>Clicar aqui até fazer o botão kkkkkkkkk</Link>
       </View>
     
     </SafeAreaView>
@@ -75,12 +75,12 @@ const styles = StyleSheet.create({
 
   containerMedioTexto:{
     backgroundColor:'#D9D9D9',
-    opacity:'86%',
+    opacity: 0.8,
     width:'64%',
     height:'12%',
     borderRadius:'12%',
     borderColor:'#474747',
-    borderWidth:1,
+    borderWidth:0,
     textAlign:'center'
   },
   
