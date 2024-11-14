@@ -5,14 +5,10 @@ export * from 'expo-router';
 
 declare module 'expo-router' {
   export namespace ExpoRouter {
-    export interface __routes<T extends string = string> extends Record<string, unknown> {
-<<<<<<< Updated upstream
-      StaticRoutes: `/` | `/_sitemap` | `/styles/styles` | `/teste`;
-=======
-      StaticRoutes: `/` | `/_sitemap` | `/quarta` | `/segunda` | `/terceira`;
->>>>>>> Stashed changes
-      DynamicRoutes: never;
-      DynamicRouteTemplate: never;
+    export interface __routes<T extends string | object = string> {
+      hrefInputParams: { pathname: Router.RelativePathString, params?: Router.UnknownInputParams } | { pathname: Router.ExternalPathString, params?: Router.UnknownInputParams } | { pathname: `/`; params?: Router.UnknownInputParams; } | { pathname: `/quarta`; params?: Router.UnknownInputParams; } | { pathname: `/segunda`; params?: Router.UnknownInputParams; } | { pathname: `/terceira`; params?: Router.UnknownInputParams; } | { pathname: `/_sitemap`; params?: Router.UnknownInputParams; };
+      hrefOutputParams: { pathname: Router.RelativePathString, params?: Router.UnknownOutputParams } | { pathname: Router.ExternalPathString, params?: Router.UnknownOutputParams } | { pathname: `/`; params?: Router.UnknownOutputParams; } | { pathname: `/quarta`; params?: Router.UnknownOutputParams; } | { pathname: `/segunda`; params?: Router.UnknownOutputParams; } | { pathname: `/terceira`; params?: Router.UnknownOutputParams; } | { pathname: `/_sitemap`; params?: Router.UnknownOutputParams; };
+      href: Router.RelativePathString | Router.ExternalPathString | `/${`?${string}` | `#${string}` | ''}` | `/quarta${`?${string}` | `#${string}` | ''}` | `/segunda${`?${string}` | `#${string}` | ''}` | `/terceira${`?${string}` | `#${string}` | ''}` | `/_sitemap${`?${string}` | `#${string}` | ''}` | { pathname: Router.RelativePathString, params?: Router.UnknownInputParams } | { pathname: Router.ExternalPathString, params?: Router.UnknownInputParams } | { pathname: `/`; params?: Router.UnknownInputParams; } | { pathname: `/quarta`; params?: Router.UnknownInputParams; } | { pathname: `/segunda`; params?: Router.UnknownInputParams; } | { pathname: `/terceira`; params?: Router.UnknownInputParams; } | { pathname: `/_sitemap`; params?: Router.UnknownInputParams; };
     }
   }
 }
