@@ -2,13 +2,15 @@ import React, {useState} from 'react';
 import { useRouter } from 'expo-router';
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaView, Text, StyleSheet, View, Switch } from "react-native";
+import Icon from 'react-native-vector-icons/Ionicons';
+import { Link } from 'expo-router';
 
 /* Componentes */
 import CarroBackground from "../components/CarroBackground";
 
 export default function Index() {
 
-  /* Função para passar para a próxima tela ao clicar no botão */
+  /* Função para passar para a próxima tela ao clicar no botão 
   const [isEnabled, setIsEnabled] = useState(false);
   const rota = useRouter();
 
@@ -17,7 +19,7 @@ export default function Index() {
     if (!isEnabled) {
       rota.push('/segunda');
     }
-  };
+  };*/
 
   return (
     
@@ -35,13 +37,11 @@ export default function Index() {
         <View style={styles.containerMedio}>
           <Text style={styles.containerMedioTexto}>Clique sobre o botão abaixo para localizar seu carro</Text>
           
-          <Switch
-            trackColor={{false: '#474747', true: '#000'}}
-            thumbColor={isEnabled ? '#fff' : '#fff'}
-            ios_backgroundColor="#474747"
-            onValueChange={apertarBotao}
-            value={isEnabled}
-          />
+          <Link href='/segunda'>
+              <View style={styles.iconSearch}>
+                  <Icon name="search-circle" size={50} color="#00000" />
+              </View>
+          </Link>
         </View>
 
       </View>
@@ -57,6 +57,10 @@ const styles = StyleSheet.create({
     flex:1,
     backgroundColor:'#FFF',
     flexDirection:'column'
+  },
+
+  iconSearch:{
+
   },
 
   containerPrincipal:{

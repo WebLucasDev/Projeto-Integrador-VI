@@ -5,8 +5,6 @@ import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 const CarConfirmationScreen = () => {
   return (
     <View style={styles.container}>
-      
-
       <View style={styles.card}>
         <View style={styles.detailsContainer}>
           <Text style={styles.headerText}>Seu carro é esse?</Text>
@@ -16,7 +14,6 @@ const CarConfirmationScreen = () => {
           <Text style={styles.carDetail}>Ano: 2007 / 2007</Text>
           <Text style={styles.carDetail}>Localidade: Patos de Minas - MG</Text>
         
-
         <View style={styles.imagesContainer}>
           <Image
             source={{ uri: 'https://i.ytimg.com/vi/aqMPb3z6jdo/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AHUBoAC4AOKAgwIABABGFcgZShNMA8=&rs=AOn4CLD0cQkMNH9j10keXBDrRDqRfACNHA' }}
@@ -103,8 +100,8 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   carImage: {
-    width: '30%', // Largura de cada imagem
-    aspectRatio: 1, // Mantém a proporção quadrada
+    width: '30%',
+    aspectRatio: 1,
     borderRadius: 10,
   },
   buttonsContainer: {
