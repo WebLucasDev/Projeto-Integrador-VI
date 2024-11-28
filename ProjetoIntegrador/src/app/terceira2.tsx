@@ -46,7 +46,7 @@ const AnimatedCar = () => {
         <FontAwesome5 name="home" size={24} color="gray" />
       </View>
       <View style={styles.botaoTeste}>
-        <Link href='/quarta'>Clicar aqui até fazer o botão kkkkkkkkk</Link>
+        <Link href='/quarta'>Avançar para próxima tela</Link>
       </View>
     </View>
   );

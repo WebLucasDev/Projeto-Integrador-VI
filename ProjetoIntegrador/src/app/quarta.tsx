@@ -35,14 +35,19 @@ const CarConfirmationScreen = () => {
       </View>
 
       <View style={styles.buttonsContainer}>
+
         <TouchableOpacity style={styles.button}>
-        <Link href='/segunda'>
-          <Text style={styles.buttonText}>Não</Text>
+          <Link href='/quinta'>
+            <Text style={styles.buttonText}>Não</Text>
           </Link>
         </TouchableOpacity>
+
         <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Sim</Text>
+          <Link href='/'>
+              <Text style={styles.buttonText}>Sim</Text>
+          </Link>
         </TouchableOpacity>
+
       </View>
     </View>
   );

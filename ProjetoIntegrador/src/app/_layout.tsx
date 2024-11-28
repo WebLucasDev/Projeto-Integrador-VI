@@ -19,6 +19,11 @@ export default function RootLayout() {
       <Stack.Screen 
         name="quarta" 
         options={{ headerShown: false }}/>
+
+      <Stack.Screen 
+        name="quinta" 
+        options={{ headerShown: false }}/>
+
     </Stack>
   );
 }

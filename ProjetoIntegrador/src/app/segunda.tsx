@@ -1,6 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaView, Text, StyleSheet, View, TextInput } from "react-native";
 import { Link } from 'expo-router';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 /* Componentes */
 import CarroBackground from "../components/CarroBackground";
@@ -26,7 +27,11 @@ export default function Segunda() {
         <TextInput style={styles.containerMedioTexto}
         />
 
-        <Link href='/terceira2'>Clicar aqui até fazer o botão kkkkkkkkk</Link>
+        <Link href='/terceira2'>
+            <View style={styles.iconSearch}>
+                <Icon name="checkmark-circle" size={50} color="#00000" />
+            </View>
+        </Link>
       </View>
     
     </SafeAreaView>
@@ -83,5 +88,11 @@ const styles = StyleSheet.create({
     borderWidth:0,
     textAlign:'center'
   },
+
+  iconSearch:{
+    flex: 1, 
+    justifyContent: 'center', 
+    alignItems: 'center' 
+  }
   
 });
