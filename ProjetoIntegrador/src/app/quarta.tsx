@@ -1,8 +1,16 @@
-import { Link } from 'expo-router';
 import React from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import { useLocalSearchParams, useRouter } from 'expo-router';
 
-const CarConfirmationScreen = () => {
+interface CarConfirmationScreenProps {
+  placaFormatada: string;
+}
+
+
+function Quarta() {
+  const params = useLocalSearchParams();
+  console.log(params)
+
   return (
     <View style={styles.container}>
       <View style={styles.card}>
@@ -10,41 +18,27 @@ const CarConfirmationScreen = () => {
           <Text style={styles.headerText}>Seu carro é esse?</Text>
           <Text style={styles.carTitle}>Astrão de cria</Text>
           <Text style={styles.carDetail}>Modelo: advantage 2.0 Flex</Text>
-          <Text style={styles.carDetail}>Placa: Sai curioso</Text>
+          <Text style={styles.carDetail}>Placa:{params.placa}</Text>
           <Text style={styles.carDetail}>Ano: 2007 / 2007</Text>
           <Text style={styles.carDetail}>Localidade: Patos de Minas - MG</Text>
-        
-        <View style={styles.imagesContainer}>
-          <Image
-            source={{ uri: 'https://i.ytimg.com/vi/aqMPb3z6jdo/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AHUBoAC4AOKAgwIABABGFcgZShNMA8=&rs=AOn4CLD0cQkMNH9j10keXBDrRDqRfACNHA' }}
-            style={styles.carImage}
-          />
-          <Image
-            source={{ uri: 'https://i.ytimg.com/vi/ul6vSwFfpO0/maxresdefault.jpg' }}
-            style={styles.carImage}
-          />
-          <Image
-            source={{ uri: 'https://i.pinimg.com/736x/fa/f4/2d/faf42d8df38c28ce506bb090d96b6d8e.jpg' }}
-            style={styles.carImage}
-          />
-        </View>
+
+          <View style={styles.imagesContainer}>
+            <Image
+              source={{ uri: `https://alexandre.poppedidos.com/${params.placa}.jpg` }}
+              style={styles.carImage}
+            />
+          </View>
         </View>
       </View>
 
       <View style={styles.buttonsContainer}>
-
         <TouchableOpacity style={styles.button}>
-          <Link href='/quinta'>
-            <Text style={styles.buttonText}>Não</Text>
-          </Link>
+          <Text style={styles.buttonText}>Não</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.button}>
-          <Link href='/'>
-              <Text style={styles.buttonText}>Sim</Text>
-          </Link>
+          <Text style={styles.buttonText}>Sim</Text>
         </TouchableOpacity>
-
       </View>
     </View>
   );
@@ -63,7 +57,7 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     color: 'gray',
     marginBottom: 20,
-    marginLeft: '20%'
+    marginLeft: '20%',
   },
   card: {
     width: '100%',
@@ -80,9 +74,9 @@ const styles = StyleSheet.create({
   },
   detailsContainer: {
     marginBottom: 10,
-    height:'100%',
+    height: '100%',
     flex: 1,
-    marginTop: '10%'
+    marginTop: '10%',
   },
   carTitle: {
     fontSize: 18,
@@ -92,7 +86,7 @@ const styles = StyleSheet.create({
   carDetail: {
     fontSize: 14,
     color: 'gray',
-    padding:'3%'
+    padding: '3%',
   },
   imagesContainer: {
     flexDirection: 'row',
@@ -125,4 +119,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CarConfirmationScreen;
+export default Quarta;
