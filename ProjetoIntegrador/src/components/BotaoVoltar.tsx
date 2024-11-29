@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     botaoVoltar:{
         backgroundColor:'#474747',
         width:'8%',
-        left:'4%',
+        right:'40%',
         borderRadius:'4%',
         alignItems:'center'
     }

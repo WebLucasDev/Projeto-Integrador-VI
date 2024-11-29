@@ -18,7 +18,7 @@ export default function Index() {
 
   return (
     <SafeAreaView style={styles.containerMain}>
-    <StatusBar style="dark" translucent={false} backgroundColor="#33A031"/>
+    <StatusBar style="dark" translucent={false}/>
       <CarroBackground />
 
       <View style={styles.containerSuperior}>

@@ -52,7 +52,7 @@ export default function Segunda() {
       const carroEncontrado = data.find(carro => carro.license_plate === placaFormatada);
   
       if (carroEncontrado) {
-        router.push(`/terceira?placa=${placaFormatada}`);
+        router.push({ pathname: "/terceira", params: carroEncontrado as any });
       } else {
         Alert.alert('Placa não encontrada', 'Não encontramos seu carro no estacionamento.');
       }
@@ -67,12 +67,11 @@ export default function Segunda() {
       <StatusBar hidden />
       <CarroBackground />
       <BotaoVoltar />
-
       <View style={styles.containerSuperior}>
         <Text style={styles.containerSuperiorTexto}>Digite a placa do seu veículo</Text>
         <TextInput
           style={styles.inputPlaca}
-          placeholder={isMercosul ? "AAA0A00" : "AAA-0000"}
+          placeholder={isMercosul ? "AAA0A00" : "AAA0000"}
           placeholderTextColor="#a0a0a0"
           value={placa}
           onChangeText={handlePlacaChange}
@@ -81,7 +80,7 @@ export default function Segunda() {
 
         <View style={styles.switchContainer}>
           <Text style={styles.switchLabel}>
-            {isMercosul ? "Placas Mercosul" : "Placas Não Mercosul"}
+            {isMercosul ? "Placas Mercosul" : "Placas Normal"}
           </Text>
           <Switch
             trackColor={{ false: "#B0B0B0", true: "#3B82F6" }}

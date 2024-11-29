@@ -16,13 +16,13 @@ const AnimatedCar = () => {
       Animated.sequence([
         Animated.timing(carPosition, {
           toValue: 1.7, // Move até o final da linha
-          duration: 1500, // Tempo da animação
+          duration: 1000, // Tempo da animação
           easing: Easing.linear,
           useNativeDriver: true,
         }),
         Animated.timing(carPosition, {
           toValue: 0, // Retorna ao início
-          duration: 1500,
+          duration: 1000,
           easing: Easing.linear,
           useNativeDriver: true,
         }),
@@ -31,7 +31,7 @@ const AnimatedCar = () => {
 
     const timer = setTimeout(() => {
       router.push({ pathname: "/quarta", params});
-    }, 5000); // o 5000 está definindo o tempo para 5 segundos
+    }, 3000); // o 3000 está definindo o tempo para 3 segundos
 
     return() => clearTimeout(timer);
   }, [carPosition, router, params]);
@@ -54,9 +54,6 @@ const AnimatedCar = () => {
           <View style={styles.line} />
         </View>
         <FontAwesome5 name="home" size={24} color="gray" />
-      </View>
-      <View style={styles.botaoTeste}>
-        <Link href={{ pathname: "/quarta", params }} >Avançar para próxima tela</Link>
       </View>
     </View>
   );
@@ -94,9 +91,6 @@ const styles = StyleSheet.create({
   car: {
     position: 'absolute',
   },
-  botaoTeste: {
-
-  }
 });
 
 export default AnimatedCar;
