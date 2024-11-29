@@ -9,7 +9,6 @@ interface CarConfirmationScreenProps {
 
 function Quarta() {
   const params = useLocalSearchParams();
-  console.log(params)
 
   return (
     <View style={styles.container}>

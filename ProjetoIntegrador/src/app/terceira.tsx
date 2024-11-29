@@ -3,12 +3,12 @@ import { View, Text, StyleSheet, Animated, Easing, Button } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { Link } from 'expo-router';
 import { useLocalSearchParams } from 'expo-router/build/hooks';
-
+import { useRouter } from 'expo-router';
 
 
 const AnimatedCar = () => {
   const carPosition = useRef(new Animated.Value(0)).current;
-
+  const router = useRouter();
   const params = useLocalSearchParams();
 
   useEffect(() => {
@@ -28,7 +28,13 @@ const AnimatedCar = () => {
         }),
       ])
     ).start();
-  }, [carPosition]);
+
+    const timer = setTimeout(() => {
+      router.push({ pathname: "/quarta", params});
+    }, 5000); // o 5000 está definindo o tempo para 5 segundos
+
+    return() => clearTimeout(timer);
+  }, [carPosition, router, params]);
 
   const translateX = carPosition.interpolate({
     inputRange: [0, 1],
